@@ -7,3 +7,5 @@ const cliente2Nome = 'alice';
 const cliente2Cpf = 70993121984;
 const cliente2Agencia = 1002;
 const cliente2Saldo = 100;
+
+console.log(cliente1Nome);
