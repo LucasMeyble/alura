@@ -3,6 +3,9 @@ import {Cliente} from './Cliente.js'
 export class ContaCorrente {
   agencia;
   #cliente;
+  
+  // #saldo =0 https://github.com/tc39/proposal-class-fields#private-fields
+  #saldo = 0;
 
   set cliente(novoValor){
     if(novoValor instanceof Cliente){
@@ -14,12 +17,16 @@ export class ContaCorrente {
     return this.#cliente;
   }
 
-  // #saldo =0 https://github.com/tc39/proposal-class-fields#private-fields
-  #saldo = 0;
-
   //eu coloco so o get pois ele so vai poder pear o soaldo e nunca colocar, se nao for ultilizado o metodo depositar
   get saldo(){
     return this.#saldo;
+  }
+
+  constructor(agencia, cliente){
+    this.agencia = agencia;
+    this.cliente = cliente;
+
+  
   }
 
   sacar(valor) {
