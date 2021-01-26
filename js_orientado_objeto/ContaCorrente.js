@@ -27,6 +27,7 @@ export class ContaCorrente {
   constructor(agencia, cliente){
     this.agencia = agencia;
     this.cliente = cliente;
+    
     //chamamos ContaCorrente pois numero d econtas esta em um escopo de classe em geral.
     ContaCorrente.numeroDeContas +=1
   }

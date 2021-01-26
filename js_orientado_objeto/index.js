@@ -1,15 +1,14 @@
 import {Cliente} from './Cliente.js';
 import {ContaCorrente} from './ContaCorrente.js';
+import {ContaPoupanca} from './ContaPoupanca.js';
 
 const Cliente1 = new Cliente('lucas', 70993119454);
 
-const Cliente2 = new Cliente('alice', 70993121984);
-
 const contaCorrenteLucas = new ContaCorrente(1001, Cliente1);
 contaCorrenteLucas.depositar(500);
+contaCorrenteLucas.sacar(100);
 
-const contaCorrenteAlice = new ContaCorrente(1002, Cliente2);
+const contaPupanca = new ContaPoupanca(50, Cliente1, 1001)
 
-contaCorrenteLucas.transferir(200, contaCorrenteAlice);
-
-console.log(ContaCorrente);
+console.log(contaPupanca);
+console.log(contaCorrenteLucas);
