@@ -1,4 +1,4 @@
-export class ContaPoupanca {
+export class Conta {
 
   #saldo;
 
@@ -9,7 +9,6 @@ export class ContaPoupanca {
   }
 
   sacar(valor) {
-    taxa = 1.1 * valor;
     if (this.#saldo >= valor) {
       this.#saldo -= valor;
       return valor;
@@ -27,4 +26,5 @@ export class ContaPoupanca {
     const valorSacado = this.sacar(valor);
     contaUsuario.depositar(valorSacado);
   }
+
 }
