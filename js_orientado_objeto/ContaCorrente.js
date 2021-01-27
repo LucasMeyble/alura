@@ -10,13 +10,9 @@ export class ContaCorrente extends Conta{
     //chamamos ContaCorrente pois numero d econtas esta em um escopo de classe em geral.
     ContaCorrente.numeroDeContas +=1;
   }
-
+  //sobreescrevendo o comportamento do metodo sacar
   sacar(valor) {
     let taxa = 1.1;
-    const valorSacado = taxa * valor;
-    if (this._saldo >= valorSacado) {
-      this._saldo -= valorSacado;
-      return valorSacado;
+    return super._sacar(valor, taxa); 
     }
   }
-}
