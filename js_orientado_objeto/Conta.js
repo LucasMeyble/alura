@@ -1,34 +1,34 @@
 import { Cliente } from './Cliente.js'
 
 export class Conta {
-  // #saldo =0 https://github.com/tc39/proposal-class-fields#private-fields
-  #saldo = 0;
-  #cliente;
+  // #saldo = 0 https://github.com/tc39/proposal-class-fields#private-fields
+  _saldo = 0;
+  _cliente;
 
   set cliente(novoValor){
     if(novoValor instanceof Cliente){
-      this.#cliente = novoValor;
+      this._cliente = novoValor;
     }
   }
 
   get cliente(){
-    return this.#cliente;
+    return this._cliente;
   }
 
   //eu coloco so o get pois ele so vai poder pear o soaldo e nunca colocar, se nao for ultilizado o metodo depositar
   get saldo(){
-    return this.#saldo;
+    return this._saldo;
   }
 
   constructor(saldoInicial, cliente, agencia) {
-    this.#saldo = saldoInicial;
-    this.cliente = cliente;
-    this.agencia = agencia;
+    this._saldo = saldoInicial;
+    this._cliente = cliente;
+    this._agencia = agencia;
   }
 
   sacar(valor) {
-    if (this.#saldo >= valor) {
-      this.#saldo -= valor;
+    if (this._saldo >= valor) {
+      this._saldo -= valor;
       return valor;
     }
   }
@@ -37,7 +37,7 @@ export class Conta {
     if (valor <= 0) {
       return;
     }
-    this.#saldo += valor;
+    this._saldo += valor;
   }
 
   transferir(valor, contaUsuario) {
