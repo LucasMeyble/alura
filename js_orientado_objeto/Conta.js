@@ -1,3 +1,4 @@
+//classe abstrata
 import { Cliente } from './Cliente.js'
 
 export class Conta {
@@ -21,14 +22,13 @@ export class Conta {
   }
 
   constructor(saldoInicial, cliente, agencia) {
+    if(this.constructor == Conta){
+     throw new Error('vc nao deveria instaciar uma classe do tipo conta diretamente');
+    }
+
     this._saldo = saldoInicial;
     this._cliente = cliente;
     this._agencia = agencia;
-
-    if(this.constructor == Conta){
-      return console.log('vc nao deveria instaciar uma classe do tipo conta');
-    }
-
   }
 
   sacar(valor) {
