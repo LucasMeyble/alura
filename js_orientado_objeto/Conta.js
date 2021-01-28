@@ -23,17 +23,16 @@ export class Conta {
 
   constructor(saldoInicial, cliente, agencia) {
     if(this.constructor == Conta){
-     throw new Error('vc nao deveria instaciar uma classe do tipo conta diretamente');
+    throw new Error('vc nao deveria instaciar uma classe do tipo conta diretamente');
     }
 
     this._saldo = saldoInicial;
     this._cliente = cliente;
     this._agencia = agencia;
   }
-
+  //metodo abstrado, no caso deve sempre ser sobrescrito em uma conta especifica
   sacar(valor) {
-    let taxa = 1.0;
-    return this._sacar(valor, taxa);
+    throw new Error('o metodo sacar da conta é abstrato ')
   }
 
   _sacar(valor, taxa){
