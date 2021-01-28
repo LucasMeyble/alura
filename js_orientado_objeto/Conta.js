@@ -24,6 +24,11 @@ export class Conta {
     this._saldo = saldoInicial;
     this._cliente = cliente;
     this._agencia = agencia;
+
+    if(this.constructor == Conta){
+      return console.log('vc nao deveria instaciar uma classe do tipo conta');
+    }
+
   }
 
   sacar(valor) {
