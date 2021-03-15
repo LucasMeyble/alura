@@ -1,7 +1,16 @@
+body{
+  background: #CCCCCC;
+}
+
 h1{
   text-align: center;
 }
 
 p{
   text-align: center;
+  
+}
+/* falando para o navegador q eu quero marcar o strong q esta dentro da tag em */
+em strong{
+  color: red;
 }
