@@ -2,14 +2,23 @@ body{
   background: #CCCCCC;
 }
 
+img{
+  width: 100%;
+}
+
 h1{
   text-align: center;
 }
 
 p{
   text-align: center;
-  
 }
+
+/* aqui eu identifico o paragrafo em se com o id missao */
+#missao {
+  font-size: 20px;
+}
+
 /* falando para o navegador q eu quero marcar o strong q esta dentro da tag em */
 em strong{
   color: red;
