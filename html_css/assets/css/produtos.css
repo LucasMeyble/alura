@@ -87,3 +87,8 @@ footer {
     background: url("../img/bg.jpg");
     padding: 40px 0;
 }
+
+.copyright{
+    color: white;
+    margin: 20px 0 0;
+}
