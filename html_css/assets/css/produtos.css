@@ -28,6 +28,12 @@ nav a{
     text-decoration: none;
 }
 
+/* o hover serve para quando o mouse estiver em cima do link ele afzer uma ação */
+nav a:hover{
+    color: #C78C19;
+    text-decoration: underline;
+}
+
 .produtos{
     width: 940px;
     margin: 0 auto;
