@@ -1,50 +1,94 @@
-.principal{
-  background: #CCCCCC;
-  padding: 30px;
+header{
+    background: #BBBBBB;
+    padding: 20px 0;
 }
 
-.titulo-principal{
-  padding-left: 20px;
+.container{
+    position: relative;
+    width: 940px;
+    margin: 0 auto
 }
 
-img{
-  width: 100%;
+nav {
+    position: absolute;
+    top: 110px;
+    right: 0px;
 }
 
-p{
-  text-align: center;
+nav li{
+    display: inline;
+    margin: 0 0 0 15px;
 }
 
-/* aqui eu identifico o paragrafo em se com o id missao */
-#missao {
-  font-size: 20px;
+nav a{
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    font-size: 22px;
+    text-decoration: none;
 }
 
-/* falando para o navegador q eu quero marcar o strong q esta dentro da tag em */
-em strong{
-  color: red;
+/* o hover serve para quando o mouse estiver em cima do link ele afzer uma ação */
+nav a:hover{
+    color: #C78C19;
+    text-decoration: underline;
 }
 
-.itens {
-  font-style: italic;
+.produtos{
+    width: 940px;
+    margin: 0 auto;
+    padding: 50px 0;
 }
 
-.beneficios {
-  background: white;
-  padding: 20px;
+.produtos li{
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    /* tamanha da bora, tipo da porda, cor da bora */
+    border: 2px solid #000000; 
+    border-radius: 10px;
 }
 
-.title-centralizado {
-  text-align: center;
+/* mouse em cima */
+.produtos li:hover{
+    border-color: #C78C19;
 }
 
-ul{
-  display: inline-block;
-  vertical-align: top;
-  width: 20%;
-  margin-right: 15%
+/* click precionado */
+.produtos li:active{
+    border-color: #088C19;
+}
+/* o h2 muda quando o mouse ester em cima do li que esta em produtor */
+.produtos li:hover h2 {
+    font-size: 35px;
 }
 
-.imagembeneficios{
-  width: 50%;
+.produtos h2{
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.produto-descricao{
+    font-size: 18px;
+}
+
+.produto-preco {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+footer {
+    text-align: center;
+    background: url("../img/bg.jpg");
+    padding: 40px 0;
+}
+
+.copyright{
+    color: white;
+    margin: 20px 0 0;
 }
