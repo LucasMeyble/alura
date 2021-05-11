@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CardNota from './CardNota';
+import CardNota from './CardNota/CardNota';
 
 class ListaDeNotas extends Component{
     
@@ -7,9 +7,9 @@ class ListaDeNotas extends Component{
         return(
             <ul>
                 {/* eu crio um array e mando os itens por categorias */}
-                { Array.of('trabalho', 'trabalho','estudos').map((categorias) => {
+                { Array.of('trabalho', 'trabalho','estudos').map((categorias, key) => {
                     return (
-                        <li>
+                        <li key={key}>
                             <div>{categorias}</div>
                             <CardNota/>
                         </li>
