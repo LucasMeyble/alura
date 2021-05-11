@@ -6,7 +6,7 @@ class ListaDeNotas extends Component{
     
     render(){
         return(
-            <ul className='lista_notas'>
+            <ul className='lista-notas'>
                 {/* eu crio um array e mando os itens por categorias */}
                 { Array.of('trabalho', 'trabalho','estudos').map((categorias, key) => {
                     return (
@@ -19,7 +19,6 @@ class ListaDeNotas extends Component{
             </ul>
         );
     };
-    
 }
 
 export default ListaDeNotas;
