@@ -10,10 +10,14 @@ class ListaDeNotas extends Component{
         return(
             <ul className='lista-notas'>
                 {/* eu crio um array e mando os itens por categorias */}
-                { this.props.notas.map((nota, key) => {
+                { this.props.notas.map((nota, index) => {
                     return (
-                        <li className='lista-notas_item' key={key}>
-                            <CardNota titulo={nota.titulo} texto={nota.texto}/>
+                        <li className='lista-notas_item' key={index}>
+                            <CardNota 
+                                indice={index}
+                                apagarNota={this.props.apagarNota}
+                                titulo={nota.titulo} 
+                                texto={nota.texto}/>
                         </li>
                     );
                 }) }
