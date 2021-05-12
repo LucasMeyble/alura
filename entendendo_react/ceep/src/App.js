@@ -10,7 +10,8 @@ class App extends Component{
   constructor(){
     super()
     this.state = {
-      notas:[]
+      notas:[],
+      categorias:[]
     }
   }
 
@@ -28,8 +29,6 @@ class App extends Component{
 
     arrayNotas.splice(index, 1)
     this.setState({notas:arrayNotas})
-
-    console.log('aqui estou eu ')
   }
 
   render(){
