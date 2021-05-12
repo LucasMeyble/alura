@@ -5,7 +5,8 @@ class ListaCategorias extends Component{
 
     _handleEventoImput(e){
         if(e.key == 'Enter'){
-            console.log('adcionar categoria')
+            let valorCategoria = e.target.value;
+            this.props.adcionarCategoria(valorCategoria)
         }
     }
 
@@ -13,10 +14,10 @@ class ListaCategorias extends Component{
         return(
             <section className='lista-categorias'>
                 <ul className='lista-categorias_lista'>
-                    <li className='lista-categorias_item'>Categorias</li>
-                    <li className='lista-categorias_item'>Categorias</li>
-                    <li className='lista-categorias_item'>Categorias</li>
-                    <li className='lista-categorias_item'>Categorias</li>
+                    {this.props.categorias.map((categoria, index) => {
+                        return <li key={index} className='lista-categorias_item'>{categoria}</li>
+                    })}
+                    
                 </ul>
 
                 <input onKeyUp={this._handleEventoImput.bind(this)} className='lista-categorias_input' type="text" placeholder='AdcionarCategoria'/>
