@@ -23,9 +23,6 @@ export default class ArrayNotas{
             func(this.notas)
         })
     }
-
-
-
 }
 
 class Nota{
