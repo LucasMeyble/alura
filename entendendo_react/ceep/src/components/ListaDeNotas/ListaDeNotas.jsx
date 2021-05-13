@@ -3,11 +3,25 @@ import CardNota from '../CardNota';
 import './style.css'
 
 class ListaDeNotas extends Component{
-    render(){
+
+    constructor(){
+        super();
+        this.state = {notas:[]}
+    }
+
+    componentDidMount(){
+        this.props.notas.inscrever(this._novasNotas.bind(this));
+    }
+
+    _novasNotas(notas){
+        this.setState({...this.state, notas})
+    }
+
+    render(){ 
         return(
             <ul className='lista-notas'>
                 {/* eu crio um array e mando os itens por categorias */}
-                { this.props.notas.map((nota, index) => {
+                { this.state.notas.map((nota, index) => {
                     return (
                         <li className='lista-notas_item' key={index}>
                             <CardNota 
