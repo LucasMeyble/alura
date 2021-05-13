@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ListaDeNotas from './components/ListaDeNotas';
 import FormularioCadastro from './components/FormularioCadastro';
 import ListaCategorias from './components/ListaCategorias';
+import Categorias from './dados/Categorias';
+import ArrayNotas from './dados/ArrayNotas';
 import './assets/App.css';
 import './assets/index.css';
 
@@ -9,45 +11,21 @@ class App extends Component{
 
   constructor(){
     super()
-    this.state = {
-      notas:[],
-      categorias:['games', 'musica']
-    }
-  }
-
-  criarNota(titulo, texto, categoria){
-    const novaNota = {titulo, texto, categoria}
-    const novoArrayNotas = [...this.state.notas, novaNota]
-    const novoEstado = {
-      notas:novoArrayNotas
-    } 
-    this.setState(novoEstado)
-  }
-
-  deletarNota(index){
-    let arrayNotas = this.state.notas;
-
-    arrayNotas.splice(index, 1)
-    this.setState({notas:arrayNotas})
-  }
-
-  adcionarCategoria(nomeCategoria){
-    const novoArrayCategorias = [...this.state.categorias, nomeCategoria]
-    const novoEstado = {...this.state, categorias:novoArrayCategorias}
-    this.setState(novoEstado)
+    this.categorias = new Categorias();
+    this.notas = new ArrayNotas();
   }
 
   render(){
     return (
       <section className='conteudo'>
-        <FormularioCadastro categorias={this.state.categorias} criarNota={this.criarNota.bind(this)}/>
+        <FormularioCadastro categorias={this.categorias.categorias} criarNota={this.notas.adicionarNota}/>
         <main className='conteudo-principal'>
         <ListaCategorias
-          adcionarCategoria={this.adcionarCategoria.bind(this)}
-          categorias={this.state.categorias}/>
+          adcionarCategoria={this.categorias.adicionarCategoria}
+          categorias={this.categorias.categorias}/>
         <ListaDeNotas 
-          apagarNota={this.deletarNota.bind(this)}
-          notas={this.state.notas}/>
+          apagarNota={this.notas.deletarNota}
+          notas={this.notas.notas}/>
         </main>
       </section>
     );
